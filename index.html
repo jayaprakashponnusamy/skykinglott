@@ -1,0 +1,225 @@
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>::SKYKINGLOTT::</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+    <link href="img/favicon.png" rel="icon">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Poppins:300,400,500,700" rel="stylesheet">
+    <link href="CSS/bootstrap.min.css" rel="stylesheet">
+    <link href="CSS/font-awesome.min.css" rel="stylesheet">
+    <link href="CSS/animate.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="CSS/jquery-ui.css">
+    <link href="CSS/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <button type="button" id="mobile-nav-toggle">
+        <i class="fa fa-bars"></i>
+    </button>
+    <header id="header">
+        <div class="container">
+
+            <div id="logo" class="pull-left">
+                <a href="index.html" class="log">SKYKINGLOTT</a>
+            </div>
+
+            <nav id="nav-menu-container">
+                <ul class="nav-menu sf-js-enabled sf-arrows" style="touch-action: pan-y;">
+                    <li>
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="about.html">Result</a>
+                    </li>
+                    <li>
+                        <a href="scheme.html">Scheme</a>
+                    </li>
+                    <li>
+                        <a href="#">T-News</a>
+                    </li>
+                    <li>
+                        <a href="contact.html">Help</a>
+                    </li>
+                    <li>
+                        <a href="contact.html">Contact Us</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <section id="hero">
+        <div class="hero-container">
+            <h1 class="">Welcome to Skykinglott</h1>
+            <h2 id="demo">12h 27m 59s </h2>
+        </div>
+    </section>
+    <main id="main">
+    </main>
+    <a href="#" class="back-to-top">
+        <i class="fa fa-chevron-up"></i>
+    </a>
+    <nav id="mobile-nav">
+        <ul class="" style="touch-action: pan-y;" id="">
+            <li>
+                <a href="index.html">Home</a>
+            </li>
+            <li>
+                <a href="about.html">Result</a>
+            </li>
+            <li>
+                <a href="scheme.html">Scheme</a>
+            </li>
+            <li>
+                <a href="#">T-News</a>
+            </li>
+            <li>
+                <a href="contact.html">Help</a>
+            </li>
+            <li>
+                <a href="contact.html">Contact Us</a>
+            </li>
+        </ul>
+    </nav>
+    <div id="mobile-body-overly"></div>
+    <script src="jquery/jquery.min.js"></script>
+    <script src="jquery/jquery.validate.min.js"></script>
+    <script src="jquery/bootstrap.bundle.min.js"></script>
+    <script src="jquery/easing.min.js"></script>
+    <script src="jquery/wow.min.js"></script>
+    <script src="jquerywaypoints.min.js"></script>
+    <script src="jquery/counterup.min.js"></script>
+    <script src="jquery/hoverIntent.js"></script>
+    <script src="jquery/superfish.min.js"></script>
+    <script src="jquery/main.js"></script>
+    <script src="jquery/jquery-ui.js"></script>
+    <script>
+        $(document).ready(function () {
+            var d;
+            $('input[id$=tbDate]').datepicker({
+                dateFormat: 'yy-mm-dd',
+                onClose: function () {
+                    $.ajax({
+                        type: 'POST',
+                        url: "charge/process.php",
+                        dataType: "json",
+                        data: $('#myform').serialize(),
+                        success: function (data) {
+                            $("#test").hide();
+                            $("#test1").hide();
+                            if (data['result'].length > 0) {
+
+
+                                console.log("Done");
+                                console.log(data);
+
+                                var second = data['result'][0].value.toString().substr(-2);
+                                var thrid = data['result'][0].value.toString().substr(-1);
+                                var div1 = '';
+                                var div2 = '';
+                                for (var i = 0; i <= data['result'].length - 1; i++) {
+                                    //console.log(data[0].type);
+                                    if (data['result'][i].type == 1) {
+                                        div1 += '<button onclick="load_data(' + data['result'][i].id + ')" type="button" class="btn btn-primary btn-lg btn-block button"><span>Gold ' + data['result'][i].dates + '</span></button>';
+                                    }
+                                    else {
+                                        div2 += '<button onclick="load_data(' + data['result'][i].id + ')" type="button" class="btn btn-primary btn-lg btn-block button"><span>Diamond ' + data['result'][i].dates + '</span></button>';
+                                    }
+                                }
+                                $('#test2 .data1').html(div1);
+                                $('#test2 .data2').html(div2);
+                                if (data['result'][0].type == 1) {
+                                    $('#ld_data').html('<table class="table table-dark" id="test5" cellpadding="20"><tbody><tr height="75"><th scope="row" class="text-center">Draw No</th><td class="text-center">' + data['draw'] + '</td></tr><tr height="75"><th scope="row" class="text-center">Draw Date</th><td class="text-center">' + data['result'][0].time + '</td></th></tr><tr height="75"><th scope="row" class="text-center">3 D Prize Rs.2700</th><td class="text-center">' + data['result'][0].value + '</td></tr></tr><tr height="75"><th scope="row" class="text-center">3 D Prize Rs.2700</th><td class="text-center">' + second + '</td></tr><tr height="75"><th scope="row" class="text-center">2 D Prize Rs.1000</th><td class="text-center">' + thrid + '</td></tr></tbody></table>');
+                                }
+                                else {
+                                    $('#ld_data').html('<table class="table table-dark" id="test5" cellpadding="20"><tbody><tr height="75"><th scope="row" class="text-center">Draw No</th><td class="text-center">' + data['draw'] + '</td></tr><tr height="75"><th scope="row" class="text-center">Draw Date</th><td class="text-center">' + data['result'][0].time + '</td></th></tr><tr height="75"><th scope="row" class="text-center">3 D Prize Rs.2700</th><td class="text-center">' + second + '</td></tr><tr height="75"><th scope="row" class="text-center">2 D Prize Rs.1000</th><td class="text-center">' + thrid + '</td></tr></tbody></table>');
+                                }
+                            } else {
+                                $('#ld_data').html("");
+                                $('#test2 .data1').html("");
+                                $('#test2 .data2').html("");
+                            }
+                        },
+                        error: function (data) {
+                            console.log('data');
+                            console.log(data);
+                        }
+                    });
+                    return false;
+                }
+            });
+        });
+    </script>
+
+    <script>
+        function load_data(id) {
+            console.log('id');
+            console.log(id);
+            $.ajax({
+                type: 'POST',
+                url: "charge/process1.php",
+                dataType: "json",
+                data: ({ id }),
+                success: function (data) {
+                    //$("#ld_data").hide();
+                    console.log(data);
+                    console.log(data.id);
+                    var div2 = '';
+                    if (data.type == 1) {
+                        div2 += '<table class="table table-dark" id="test5" cellpadding="20"><tbody><tr height="75"><th scope="row" class="text-center">Draw No</th><td class="text-center"></td></tr><tr height="75"><th scope="row" class="text-center">Draw Date</th><td class="text-center">' + data.time + '</td></th></tr><tr height="75"><th scope="row" class="text-center">3 D Prize Rs.2700</th><td class="text-center">' + data.value + '</td></tr></tr><tr height="75"><th scope="row" class="text-center">3 D Prize Rs.2700</th><td class="text-center"></td></tr><tr height="75"><th scope="row" class="text-center">2 D Prize Rs.1000</th><td class="text-center"></td></tr></tbody></table>';
+                    } else {
+                        div2 += '<table class="table table-dark" id="test5" cellpadding="20"><tbody><tr height="75"><th scope="row" class="text-center">Draw No</th><td class="text-center"></td></tr><tr height="75"><th scope="row" class="text-center">Draw Date</th><td class="text-center">' + data.time + '</td></th></tr><tr height="75"><th scope="row" class="text-center">3 D Prize Rs.2700</th><td class="text-center">' + data.value + '</td></tr></tr><tr height="75"><th scope="row" class="text-center">3 D Prize Rs.2700</th><td class="text-center"></td></tr><tr height="75"><th scope="row" class="text-center">2 D Prize Rs.1000</th><td class="text-center"></td></tr></tbody></table>';
+                    }
+                    $("#ld_data").html(div2);
+                },
+                error: function (data) {
+                    consolex.log('data');
+                    console.log(data);
+                    alert("ajax error, json: " + data);
+                }
+            });
+        }
+
+    </script>
+    <script>
+        var countDownDate = new Date("2018/08/12 11:29:59").getTime();
+        var d = new Date();
+        console.log(d);
+        console.log(d.getHours());
+        console.log(d.getMinutes());
+        console.log(d.getSeconds());
+        var x = setInterval(function () {
+            var now = new Date().getTime();
+            var distance = countDownDate - now;
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            document.getElementById("demo").innerHTML = hours + "h "
+                + minutes + "m " + seconds + "s ";
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("demo").innerHTML = "00:00:00";
+            }
+        }, 1000);
+
+        var x = window.setTimeout(function () {
+            var now = new Date().getTime();
+            var distance = countDownDate - now;
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            document.getElementById("demo").innerHTML = hours + "h "
+                + minutes + "m " + seconds + "s ";
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("demo").innerHTML = "00:00:00";
+            }
+        }, 1000);
+    </script>
+</body>
+
+</html>

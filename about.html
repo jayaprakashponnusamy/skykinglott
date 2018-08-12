@@ -1,0 +1,526 @@
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>::SKYKINGLOTT::</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+    <link href="img/favicon.png" rel="icon">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Poppins:300,400,500,700" rel="stylesheet">
+    <link href="CSS/bootstrap.min.css" rel="stylesheet">
+    <link href="CSS/font-awesome.min.css" rel="stylesheet">
+    <link href="CSS/animate.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="CSS/jquery-ui.css">
+    <link href="CSS/style.css" rel="stylesheet">
+    <style>
+        @media only screen and (max-width: 800px) {
+            .data2 {
+                padding-top: 10px;
+            }
+        }
+
+        element.style {
+            background: #0c5460;
+            height: 70px;
+        }
+
+        .text-center {
+            color: white;
+        }
+
+        #bg {
+            position: fixed;
+
+        }
+
+        #about {
+
+            display: table;
+            width: 100%;
+            height: 100vh;
+            background: url(./img/m1.jpg) top center fixed;
+            background-size: cover;
+
+        }
+
+        .check-results {
+            margin: 2px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <button type="button" id="mobile-nav-toggle">
+        <i class="fa fa-bars"></i>
+    </button>
+    <header id="header" style="background:#17a2b8;height:70px;">
+        <div class="container">
+            <div id="logo" class="pull-left" style="margin-top:-10px;">
+                <a href="#hero" class="log">SKYKINGLOTT</a>
+            </div>
+            <nav id="nav-menu-container">
+                <ul class="nav-menu sf-js-enabled sf-arrows" style="touch-action: pan-y;">
+                    <li>
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="about.html">Result</a>
+                    </li>
+                    <li>
+                        <a href="scheme.html">Scheme</a>
+                    </li>
+                    <li>
+                        <a href="#">T-News</a>
+                    </li>
+                    <li>
+                        <a href="contact.html">Help</a>
+                    </li>
+                    <li>
+                        <a href="contact.html">Contact Us</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main id="main">
+        <section id="about" class="backimg">
+            <div class="container">
+                <form action="charge/process.php" id="myform" name="myform" method="post">
+                    <input type="text" name="datepicker" value="2018-08-11" id="tbDate" class="hasDatepicker">
+                </form>
+                <div class="section-header">
+                    <h3 class="section-title">Result</h3>
+                    <p class="section-description">
+                        <span id="rtype" style="color:black">Gold Saturday </span>
+                    </p>
+                </div>
+                <p class="section-description">
+                    <span id="thead" style="color:black">Gold 11:00:00 AM </span>
+                </p>
+                <div class="row">
+                    <div class="col-md-5">
+                        <div id="ld_data">
+                            <table class="table" id="test" cellpadding="20" style="background-color:Green;">
+                                <tbody>
+                                    <tr height="75">
+                                        <th scope="row" class="text-center" style="color:white;">Draw No</th>
+                                        <td class="text-center draw_no" id="drd" style="color:white;"> 151 </td>
+                                    </tr>
+                                    <tr height="75">
+                                        <th scope="row" class="text-center" style="color:white;">Draw Date</th>
+                                        <td class="text-center" id="tdate" style="color:white;"></td>
+                                    </tr>
+                                    <tr height="75">
+                                        <th scope="row" class="text-center" style="color:white;">3 D Prize Rs 27000</th>
+                                        <td class="text-center first-prize" style="color:white;" id="tone"></td>
+                                    </tr>
+                                    <tr height="75">
+                                        <th scope="row" class="text-center" style="color:white;">2 D Prize Rs 1000</th>
+                                        <td class="text-center second-prize" style="color:white;" id="ttwo"></td>
+                                    </tr>
+                                    <tr height="75">
+                                        <th scope="row" class="text-center" style="color:white;">1 D Prize Rs 100</th>
+                                        <td class="text-center third-prize" style="color:white;" id="tthree"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="col-md-1"></div>
+                    <div class="col-md-6">
+                        <div class="row" id="test1">
+                            <div class="col-xs-6  col-sm-6 data2">
+                                <button type="button" id="btt" class="btn btn-primary   button check-results" data-type="1" data-date="2018-08-11" data-time="11:00:00 AM"
+                                    style="width: 250px; font-size: 15px;">
+                                    <span>Gold
+                                        <span class="dd">Saturday</span>
+                                        <br> 11:00 AM </span>
+                                </button>
+                                <button type="button" class="btn btn-primary   button check-results" data-type="1" data-date="2018-08-11" data-time="01:00:00 PM"
+                                    style="width: 250px; font-size: 15px;">
+                                    <span>Gold
+                                        <span class="dd">Saturday</span>
+                                        <br> 01:00 PM </span>
+                                </button>
+                                <button type="button" class="btn btn-primary   button check-results" data-type="1" data-date="2018-08-11" data-time="06:00:00 PM"
+                                    style="width: 250px; font-size: 15px;">
+                                    <span>Gold
+                                        <span class="dd">Saturday</span>
+                                        <br> 06:00 PM </span>
+                                </button>
+                                <button type="button" class="btn btn-primary   button check-results" data-type="1" data-date="2018-08-11" data-time="07:25:00 PM"
+                                    style="width: 250px; font-size: 15px;">
+                                    <span>Gold
+                                        <span class="dd">Saturday</span>
+                                        <br> 07:20 PM </span>
+                                </button>
+                            </div>
+                            <div class="col-xs-6 col-sm-6 data2">
+                                <button type="button" class="btn btn-primary   button check-results" data-type="2" data-date="2018-08-11" data-time="11:00:00 AM"
+                                    style="width: 250px; font-size: 15px;">
+                                    <span>Diamond
+                                        <span class="dd">Saturday</span>
+                                        <br> 11:00 AM</span>
+                                </button>
+                                <button type="button" class="btn btn-primary   button check-results" data-type="2" data-date="2018-08-11" data-time="01:00:00 PM"
+                                    style="width: 250px; font-size: 15px;">
+                                    <span>Diamond
+                                        <span class="dd">Saturday</span>
+                                        <br> 1:00 PM</span>
+                                </button>
+                                <button type="button" class="btn btn-primary   button check-results" data-type="2" data-date="2018-08-11" data-time="06:00:00 PM"
+                                    style="width: 250px; font-size: 15px;">
+                                    <span>Diamond
+                                        <span class="dd">Saturday</span>
+                                        <br> 6:00 PM</span>
+                                </button>
+                                <button type="button" class="btn btn-primary   button check-results" data-type="2" data-date="2018-08-11" data-time="07:25:00 PM"
+                                    style="width: 250px; font-size: 15px;">
+                                    <span>Diamond
+                                        <span class="dd">Saturday</span>
+                                        <br> 7:20 PM</span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="row" id="test12" style="display: none;">
+                            <div class="col-xs-6  col-sm-6 data2">
+                                <button type="button" id="btt" class="btn btn-primary   button check-results" data-type="1" data-date="2018-08-11" data-time="11:00:00 AM"
+                                    style="width: 250px; font-size: 15px;">
+                                    <span>Gold
+                                        <span class="dd">Saturday</span>
+                                        <br> 11:00 AM </span>
+                                </button>
+                                <button type="button" class="btn btn-primary   button check-results" data-type="2" data-date="2018-08-11" data-time="11:00:00 AM"
+                                    style="width: 250px; font-size: 15px;">
+                                    <span>Diamond
+                                        <span class="dd">Saturday</span>
+                                        <br> 11:00 AM</span>
+                                </button>
+                                <button type="button" class="btn btn-primary   button check-results" data-type="1" data-date="2018-08-11" data-time="01:00:00 PM"
+                                    style="width: 250px; font-size: 15px;">
+                                    <span>Gold
+                                        <span class="dd">Saturday</span>
+                                        <br> 01:00 PM </span>
+                                </button>
+                                <button type="button" class="btn btn-primary   button check-results" data-type="2" data-date="2018-08-11" data-time="01:00:00 PM"
+                                    style="width: 250px; font-size: 15px;">
+                                    <span>Diamond
+                                        <span class="dd">Saturday</span>
+                                        <br> 1:00 PM</span>
+                                </button>
+                                <button type="button" class="btn btn-primary   button check-results" data-type="1" data-date="2018-08-11" data-time="06:00:00 PM"
+                                    style="width: 250px; font-size: 15px;">
+                                    <span>Gold
+                                        <span class="dd">Saturday</span>
+                                        <br> 06:00 PM </span>
+                                </button>
+                                <button type="button" class="btn btn-primary   button check-results" data-type="2" data-date="2018-08-11" data-time="06:00:00 PM"
+                                    style="width: 250px; font-size: 15px;">
+                                    <span>Diamond
+                                        <span class="dd">Saturday</span>
+                                        <br> 6:00 PM</span>
+                                </button>
+                                <button type="button" class="btn btn-primary   button check-results" data-type="1" data-date="2018-08-11" data-time="07:25:00 PM"
+                                    style="width: 250px; font-size: 15px;">
+                                    <span>Gold
+                                        <span class="dd">Saturday</span>
+                                        <br> 07:20 PM </span>
+                                </button>
+                                <button type="button" class="btn btn-primary   button check-results" data-type="2" data-date="2018-08-11" data-time="07:25:00 PM"
+                                    style="width: 250px; font-size: 15px;">
+                                    <span>Diamond
+                                        <span class="dd">Saturday</span>
+                                        <br> 7:20 PM</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <a href="#" class="back-to-top">
+        <i class="fa fa-chevron-up"></i>
+    </a>
+    <script src="jquery/jquery.min.js"></script>
+    <script src="jquery/jquery.validate.min.js"></script>
+    <script src="jquery/bootstrap.bundle.min.js"></script>
+    <script src="jquery/easing.min.js"></script>
+    <script src="jquery/wow.min.js"></script>
+    <script src="jquerywaypoints.min.js"></script>
+    <script src="jquery/counterup.min.js"></script>
+    <script src="jquery/hoverIntent.js"></script>
+    <script src="jquery/superfish.min.js"></script>
+    <script src="jquery/main.js"></script>
+    <script src="jquery/jquery-ui.js"></script>
+    <script>
+        $(document).ready(function () {
+
+            if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+                $(".button").css('width', '135px');
+                $(".button").css("fontSize", "12px");
+                $("#test1").hide();
+                $("#test12").show();
+            }
+            else {
+                $(".button").css('width', '250px');
+                $(".button").css("fontSize", "15px");
+                $("#test1").show();
+                $("#test12").hide();
+            }
+            var date = $('#tbDate').val();
+            var dd = date + ' 11:30 am';
+            var cd = "2018-08-11 23:50 pm";
+            if (cd >= dd) {
+            }
+            else {
+                $("#tdate").html("");
+                $("#tone").html("");
+                $("#ttwo").html("");
+                $("#tthree").html("");
+                $("#thead").html("No Result");
+            }
+            $('.check-results').on('click', function () {
+                var type = $(this).data('type');
+                var time = $(this).data('time');
+                var date = $('#tbDate').val();
+                var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+                var d = new Date($('#tbDate').val());
+                var dayName = days[d.getDay()];
+                if (type == 1) {
+                    $("#rtype").html("Gold " + dayName);
+                }
+                else {
+                    $("#rtype").html("Diamond " + dayName);
+                }
+                $.ajax({
+                    type: 'POST',
+                    url: "charge/process.php",
+                    dataType: "json",
+                    data: 'type=' + type + '&time=' + time + '&date=' + date,
+                    success: function (data) {
+                        if (data['result'].length > 0) {
+                            console.log("Done");
+                            console.log(data);
+                            console.log(time);
+                            console.log(date);
+                            var second = data['result'][0].value.toString().substr(-2);
+                            var thrid = data['result'][0].value.toString().substr(-1);
+                            var div1 = '';
+                            var div2 = '';
+                            if (data['result'][0].date) {
+                                if (data['result'][0].type == 1) {
+                                    var gtype = "Gold ";
+                                    $("#tdate").html(data['result'][0].date);
+                                    $("#tone").html(data['result'][0].value);
+                                    $("#ttwo").html(second);
+                                    $("#tthree").html(thrid);
+                                }
+                                else {
+                                    var gtype = "Diamond ";
+                                    $("#tdate").html(data['result'][0].date);
+                                    $("#tone").html("");
+                                    $("#ttwo").html(second);
+                                    $("#tthree").html("");
+                                }
+                                $("#thead").html(gtype + " " + data['result'][0].time);
+                            }
+                        } else {
+                            $("#tdate").html("");
+                            $("#tone").html("");
+                            $("#ttwo").html("");
+                            $("#tthree").html("");
+                            $("#thead").html("No Result");
+                        }
+                    },
+                    error: function (data) {
+                        console.log('data');
+                        console.log(data);
+                        $("#tdate").html("");
+                        $("#tone").html("");
+                        $("#ttwo").html("");
+                        $("#tthree").html("");
+                        $("#thead").html("No Result");
+                    }
+                });
+                $('html,body').animate({
+                    scrollTop: $("#about").offset().top
+                }, 1000);
+            });
+            var d;
+            $('input[id$=tbDate]').datepicker({
+                dateFormat: 'yy-mm-dd',
+                onSelect: function () {
+                    $.ajax({
+                        type: 'POST',
+                        url: "charge/process.php",
+                        dataType: "json",
+                        data: $('#myform').serialize(),
+                        success: function (data) {
+                            var dd = $('#tbDate').val();
+                            $.ajax({
+                                type: 'POST',
+                                url: "charge/draw.php",
+                                dataType: "json",
+                                data: 'dd=' + dd,
+                                success: function (data) {
+                                    $('#drd').html(data);
+                                },
+                                error: function (data) {
+                                    $('#drd').html(data);
+                                }
+                            });
+                            var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+                            var d = new Date($('#tbDate').val());
+                            var dayName = days[d.getDay()];
+                            $('.dd').html(dayName);
+                            $('#rtype').html('Gold ' + dayName);
+                            if (data['result'].length > 0) {
+                                console.log("Done");
+                                $('#thead').html('Gold 11:00:00 AM');
+                                var dd = data['result'][0].value.replace(/\s+/g, '');
+                                var second = dd.toString().slice(-2);
+                                var thrid = dd.toString().slice(-1);
+                                console.log(data['result'][0].value);
+                                console.log(data['result'][0].value.replace(/\s+/g, ''));
+                                console.log(second);
+                                console.log(thrid);
+                                var div1 = '';
+                                var div2 = '';
+                                if (data['result'][0].date) {
+                                    if (data['result'][0].type == 1) {
+                                        var gtype = "Gold ";
+                                        $("#tdate").html(data['result'][0].date);
+                                        $("#tone").html(dd);
+                                        $("#ttwo").html(second);
+                                        $("#tthree").html(thrid);
+                                    }
+                                    else {
+                                        var gtype = "Diamond ";
+                                        $("#tdate").html(data['result'][0].date);
+                                        $("#tone").html("");
+                                        $("#ttwo").html(second);
+                                        $("#tthree").html("");
+                                    }
+                                    $("#thead").html(gtype + " " + data['result'][0].time);
+                                }
+                            } else {
+                                $("#tdate").html("");
+                                $("#tone").html("");
+                                $("#ttwo").html("");
+                                $("#tthree").html("");
+                                $('#thead').html('No Result');
+                            }
+                        },
+                        error: function (data) {
+                            var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+                            var d = new Date($('#tbDate').val());
+                            var dayName = days[d.getDay()];
+                            $('.dd').html(dayName);
+                            console.log('data');
+                            console.log(data);
+                            console.log('data');
+                            console.log(data);
+                            $("#tdate").html("");
+                            $("#tone").html("");
+                            $("#ttwo").html("");
+                            $("#tthree").html("");
+                            $("#thead").html("No Result");
+                            var dd = $('#tbDate').val();
+                            $.ajax({
+                                type: 'POST',
+                                url: "charge/draw.php",
+                                dataType: "json",
+                                data: 'dd=' + dd,
+                                success: function (data) {
+                                    $('#drd').html(data);
+                                },
+                                error: function (data) {
+                                    $('#drd').html(data);
+                                }
+                            });
+
+                        }
+                    });
+                    return false;
+                }
+            });
+            $('.check-results').on('click', function () {
+                sel_date = $(this).data('date');
+                sel_time = $(this).data('time');
+                sel_type = $(this).data('type');
+
+                $.ajax({
+                    url: 'http://www.lottstars.com/about.php',
+                    data: { check_result: 1, sel_date: sel_date, sel_time: sel_time, sel_type: sel_type },
+                    type: 'POST',
+                    success: function (data) {
+                        if (data.success) {
+                            alert('');
+                        }
+                    }
+                })
+            });
+        });
+    </script>
+    <script>
+        var countDownDate = new Date("Sep 5, 2018 15:37:25").getTime();
+        var d = new Date(); // for now
+        console.log(d);
+        console.log(d.getHours());
+        console.log(d.getMinutes());
+        console.log(d.getSeconds());
+        // Update the count down every 1 second
+        var x = setInterval(function () {
+
+            // Get todays date and time
+            var now = new Date().getTime();
+
+            // Find the distance between now an the count down date
+            var distance = countDownDate - now;
+
+            // Time calculations for days, hours, minutes and seconds
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            // Output the result in an element with id="demo"
+            // document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+            //  + minutes + "m " + seconds + "s ";
+
+            // If the count down is over, write some text 
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("demo").innerHTML = "EXPIRED";
+            }
+        }, 1000);
+    </script>
+    <nav id="mobile-nav">
+        <ul class="" style="touch-action: pan-y;" id="">
+            <li>
+                <a href="index.html">Home</a>
+            </li>
+            <li>
+                <a href="about.html">Result</a>
+            </li>
+            <li>
+                <a href="scheme.html">Scheme</a>
+            </li>
+            <li>
+                <a href="#">T-News</a>
+            </li>
+            <li>
+                <a href="contact.html">Help</a>
+            </li>
+            <li>
+                <a href="contact.html">Contact Us</a>
+            </li>
+        </ul>
+    </nav>
+    <div id="mobile-body-overly"></div>
+    <div id="ui-datepicker-div" class="ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all"></div>
+</body>
+</html>
