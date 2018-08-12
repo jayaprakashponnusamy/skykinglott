@@ -1,8 +1,7 @@
 <html lang="en">
-
 <head>
     <meta charset="utf-8">
-    <title>::SKYKINGLOTT::</title>
+    <title>SKYKINGLOTT</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -249,7 +248,7 @@
     <script src="jquery/bootstrap.bundle.min.js"></script>
     <script src="jquery/easing.min.js"></script>
     <script src="jquery/wow.min.js"></script>
-    <script src="jquerywaypoints.min.js"></script>
+    <script src="jquery/waypoints.min.js"></script>
     <script src="jquery/counterup.min.js"></script>
     <script src="jquery/hoverIntent.js"></script>
     <script src="jquery/superfish.min.js"></script>
@@ -302,10 +301,6 @@
                     data: 'type=' + type + '&time=' + time + '&date=' + date,
                     success: function (data) {
                         if (data['result'].length > 0) {
-                            console.log("Done");
-                            console.log(data);
-                            console.log(time);
-                            console.log(date);
                             var second = data['result'][0].value.toString().substr(-2);
                             var thrid = data['result'][0].value.toString().substr(-1);
                             var div1 = '';
@@ -336,8 +331,6 @@
                         }
                     },
                     error: function (data) {
-                        console.log('data');
-                        console.log(data);
                         $("#tdate").html("");
                         $("#tone").html("");
                         $("#ttwo").html("");
@@ -378,15 +371,10 @@
                             $('.dd').html(dayName);
                             $('#rtype').html('Gold ' + dayName);
                             if (data['result'].length > 0) {
-                                console.log("Done");
                                 $('#thead').html('Gold 11:00:00 AM');
                                 var dd = data['result'][0].value.replace(/\s+/g, '');
                                 var second = dd.toString().slice(-2);
                                 var thrid = dd.toString().slice(-1);
-                                console.log(data['result'][0].value);
-                                console.log(data['result'][0].value.replace(/\s+/g, ''));
-                                console.log(second);
-                                console.log(thrid);
                                 var div1 = '';
                                 var div2 = '';
                                 if (data['result'][0].date) {
@@ -419,10 +407,6 @@
                             var d = new Date($('#tbDate').val());
                             var dayName = days[d.getDay()];
                             $('.dd').html(dayName);
-                            console.log('data');
-                            console.log(data);
-                            console.log('data');
-                            console.log(data);
                             $("#tdate").html("");
                             $("#tone").html("");
                             $("#ttwo").html("");
@@ -468,29 +452,20 @@
     <script>
         var countDownDate = new Date("Sep 5, 2018 15:37:25").getTime();
         var d = new Date(); // for now
-        console.log(d);
-        console.log(d.getHours());
-        console.log(d.getMinutes());
-        console.log(d.getSeconds());
         // Update the count down every 1 second
         var x = setInterval(function () {
-
             // Get todays date and time
             var now = new Date().getTime();
-
             // Find the distance between now an the count down date
             var distance = countDownDate - now;
-
             // Time calculations for days, hours, minutes and seconds
             var days = Math.floor(distance / (1000 * 60 * 60 * 24));
             var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
             var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
             var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
             // Output the result in an element with id="demo"
             // document.getElementById("demo").innerHTML = days + "d " + hours + "h "
             //  + minutes + "m " + seconds + "s ";
-
             // If the count down is over, write some text 
             if (distance < 0) {
                 clearInterval(x);
