@@ -54,7 +54,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .button {
   border-radius: 4px;
-  background-color: #f4511e;
+  background-color: #7DA2C5;
   border: none;
   color: #FFFFFF;
   text-align: center;
@@ -501,7 +501,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 .section-header .section-description {
   text-align: center;
   padding-bottom: 40px;
-  color: #999;
+  color: #007bff;
 }
 
 /* About Us Section
@@ -682,6 +682,17 @@ body.mobile-nav-active #mobile-nav-toggle {
 {
 	color:#fff;
 	font-size:30px;
+}
+
+.log.inner
+{
+	color:#fff;
+	
+}
+.log.inner:hover
+{
+	color:#2dca98;
+	
 }
 /* Call To Action Section
 --------------------------------*/
